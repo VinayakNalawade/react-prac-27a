@@ -1,0 +1,89 @@
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginpageimg {
+  display: none;
+}
+
+.loginForm {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginpagelogo {
+  width: 220px;
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.loginpageformimg {
+  width: 100%;
+}
+
+.loginlabel {
+  color: #475569;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.forminput {
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #475569;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  background-color: #d7dfe9;
+}
+
+.loginbutton {
+  border: none;
+  border-radius: 7px;
+  background-color: #0967d2;
+  outline: none;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0px;
+  margin-top: 25px;
+}
+
+.error-msg {
+  margin-bottom: 10px;
+  color: red;
+  align-self: flex-start;
+}
+
+@media screen and (min-width: 992px) {
+  .loginPage {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .loginpageimg {
+    display: inline;
+    width: 48%;
+    margin-right: 5%;
+  }
+
+  .loginpageformimg {
+    display: none;
+  }
+
+  .loginForm {
+    padding: 25px;
+    width: 35%;
+    box-shadow: 0px 4px 16px 0px #bfbfbf;
+  }
+}
