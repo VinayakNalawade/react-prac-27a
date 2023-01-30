@@ -3,7 +3,7 @@ import {Component} from 'react'
 import './index.css'
 
 class LoginForm extends Component {
-  state = {username: '', password: '', errorMsg: ''}
+  state = {username: '', password: '', error: false, errorMsg: ''}
 
   changeUsername = event => {
     this.setState({username: event.target.value})
@@ -21,12 +21,12 @@ class LoginForm extends Component {
     const userDetails = {username, password}
 
     if (username === '') {
-      this.setState({errorMsg: 'Please enter Username'})
+      this.setState({errorMsg: 'Please enter Username', error: true})
       return
     }
 
     if (password === '') {
-      this.setState({errorMsg: 'Please enter Password'})
+      this.setState({errorMsg: 'Please enter Password', error: true})
       return
     }
 
@@ -44,12 +44,12 @@ class LoginForm extends Component {
 
       history.replace('/')
     } else {
-      this.setState({errorMsg: `*${result.error_msg}`})
+      this.setState({errorMsg: result.error_msg, error: true})
     }
   }
 
   render() {
-    const {errorMsg, username, password} = this.state
+    const {errorMsg, username, password, error} = this.state
 
     return (
       <div className="loginPage">
@@ -94,7 +94,7 @@ class LoginForm extends Component {
           <button type="submit" className="loginbutton">
             Login
           </button>
-          <p className="error-msg">{errorMsg}</p>
+          {error && <p className="error-msg">*{errorMsg}</p>}
         </form>
       </div>
     )
